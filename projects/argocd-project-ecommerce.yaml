@@ -4,19 +4,17 @@ metadata:
   name: ecommerce
   namespace: argocd
 spec:
-  description: "Ecommerce microservices project with Postgres + MinIO + Online Boutique"
+  # Repos this project can use
   sourceRepos:
-    - 'https://github.com/himanshunigam-456/*'
+    - 'https://github.com/himanshunigam-456/ecommerce-gitops.git'
+    - 'https://github.com/himanshunigam-456/microservices-demo.git'
+
+  # Where it is allowed to deploy
   destinations:
-    - namespace: ecom-dev
+    - namespace: '*'
       server: https://kubernetes.default.svc
-    - namespace: ecom-prod
-      server: https://kubernetes.default.svc
-    - namespace: data
-      server: https://kubernetes.default.svc
+
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
-  namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
+
