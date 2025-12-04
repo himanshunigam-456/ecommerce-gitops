@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra-postgres
+  namespace: argocd
+spec:
+  project: ecommerce
+  source:
+    repoURL: 'https://github.com/himanshunigam-456/ecommerce-gitops.git'
+    targetRevision: main
+    path: infra/postgres
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: data
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

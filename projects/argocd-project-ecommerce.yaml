@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ecommerce
+  namespace: argocd
+spec:
+  description: "Ecommerce microservices project with Postgres + MinIO + Online Boutique"
+  sourceRepos:
+    - 'https://github.com/himanshunigam-456/*'
+  destinations:
+    - namespace: ecom-dev
+      server: https://kubernetes.default.svc
+    - namespace: ecom-prod
+      server: https://kubernetes.default.svc
+    - namespace: data
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
