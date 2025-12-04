@@ -5,19 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: ecommerce
+
   source:
-    repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
-    targetRevision: HEAD
-    path: kubernetes-manifests      # 🔴 change here too
-    directory:
-      recurse: true
+    repoURL: https://github.com/himanshunigam-456/microservices-demo.git
+    targetRevision: main
+    path: kubernetes-manifests
+
   destination:
     server: https://kubernetes.default.svc
     namespace: ecom-prod
+
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-

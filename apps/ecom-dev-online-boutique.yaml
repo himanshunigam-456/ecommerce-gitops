@@ -5,19 +5,20 @@ metadata:
   namespace: argocd
 spec:
   project: ecommerce
+
   source:
-    repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
-    targetRevision: HEAD
-    path: kubernetes-manifests      # 🔴 change from "release" to this
-    directory:
-      recurse: true
+    repoURL: https://github.com/himanshunigam-456/microservices-demo.git
+    targetRevision: main          # or HEAD, both are fine
+    path: kubernetes-manifests    # ✅ plain K8s manifests, no CRDs
+                                  # (no "directory:" block needed)
+
   destination:
     server: https://kubernetes.default.svc
     namespace: ecom-dev
+
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true      # let Argo create ecom-dev if needed
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-
