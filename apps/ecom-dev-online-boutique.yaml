@@ -7,7 +7,8 @@ spec:
   project: ecommerce
   source:
     repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
-    targetRevision: main
+    # HEAD works even if branch is main or master
+    targetRevision: HEAD
     path: release
     directory:
       recurse: false
@@ -18,3 +19,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

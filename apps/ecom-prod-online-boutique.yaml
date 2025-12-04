@@ -7,7 +7,7 @@ spec:
   project: ecommerce
   source:
     repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
-    targetRevision: main
+    targetRevision: HEAD
     path: release
     directory:
       recurse: false
@@ -18,3 +18,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
