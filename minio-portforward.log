@@ -1,0 +1,24 @@
+nohup: ignoring input
+Forwarding from 127.0.0.1:8081 -> 80
+Forwarding from [::1]:8081 -> 80
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+E1204 06:13:32.177555   22516 portforward.go:404] "Unhandled Error" err="error copying from local connection to remote stream: writeto tcp4 127.0.0.1:8081->127.0.0.1:59432: read tcp4 127.0.0.1:8081->127.0.0.1:59432: read: connection reset by peer"
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
+Handling connection for 8081
