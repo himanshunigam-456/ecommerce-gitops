@@ -8,9 +8,9 @@ spec:
   source:
     repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
     targetRevision: HEAD
-    path: release
+    path: kubernetes-manifests      # 🔴 change here too
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: ecom-prod
@@ -20,3 +20,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+

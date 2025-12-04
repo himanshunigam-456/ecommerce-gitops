@@ -7,11 +7,10 @@ spec:
   project: ecommerce
   source:
     repoURL: 'https://github.com/himanshunigam-456/microservices-demo.git'
-    # HEAD works even if branch is main or master
     targetRevision: HEAD
-    path: release
+    path: kubernetes-manifests      # 🔴 change from "release" to this
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: ecom-dev
@@ -21,3 +20,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
